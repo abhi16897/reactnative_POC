@@ -1,0 +1,75 @@
+{
+  "allProducts": [
+    {
+      "name": "Lenovo",
+      "price": "940",
+      "stock": "530",
+      "description": "Elctronics",
+      "category": "Electronics",
+      "imageUrl": "lenovo.jpg",
+      "username": "abhi16897",
+      "id": 1
+    },
+    {
+      "name": "Hp",
+      "price": "940",
+      "stock": "600",
+      "description": "NIce",
+      "category": "Electronics",
+      "imageUrl": "hp.jpg",
+      "username": "abhi16898",
+      "id": 2
+    },
+    {
+      "name": "Accer",
+      "price": "56000",
+      "stock": "123456",
+      "description": "Hello This is Good Product",
+      "category": "Electronics",
+      "imageUrl": "accer.jpg",
+      "username": "abhi16897",
+      "id": 3
+    },
+    {
+      "name": "Lenovo",
+      "price": "12346",
+      "description": "Hello",
+      "stock": "132",
+      "category": "Electronics",
+      "imageUrl": "hp.jpg",
+      "id": 4
+    }
+  ],
+  "userDetails": [
+    {
+      "id": 1,
+      "username": "abhi16897",
+      "email": "saiabhishek1997@gmail.com",
+      "password": "saiabhi1"
+    },
+    {
+      "username": "abhi16898",
+      "email": "saiabhishek0@gmail.com",
+      "password": "saiabhi1",
+      "id": 2
+    },
+    {
+      "username": "abhi16895",
+      "email": "saiabhishek12@gmail.com",
+      "password": "saiabhi1",
+      "id": 3
+    },
+    {
+      "username": "user",
+      "email": "user@user.com",
+      "password": "123",
+      "id": 4
+    },
+    {
+      "username": "admin",
+      "email": "admin@admin.com",
+      "password": "123",
+      "id": 5
+    }
+  ]
+}
