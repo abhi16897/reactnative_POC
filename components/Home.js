@@ -18,6 +18,11 @@ export default function HomeComponent({navigation}){
          setOriginalList(res.data);
         })
     },[])
+    const deleteItem=(id)=>{
+        axios.delete("http://localhost:3000/allProducts/"+id).then(res=>{
+            console.log(res.data)
+        })
+    }
     return(
        
          <ScrollView>
@@ -31,10 +36,17 @@ export default function HomeComponent({navigation}){
                      return(
                         <View key={prod.id} style={mystyle.card}>
                                 <TouchableOpacity onPress={()=>{navigation.navigate('PRODUCT',{item:prod})}}>
-                                <Image source={require('../assets/images/'+prod.imageUrl)} style={{width: 230, height: 230}} /> 
+                                <Image source={require('../assets/images/'+prod.imageUrl)} style={{width: 270, height: 300}} /> 
                                 <Text style={mystyle.textstyle}>{prod.name}</Text>
                          <Text>Category: {prod.category}</Text>
-                           </TouchableOpacity>   
+                           </TouchableOpacity> 
+                           <View  style={mystyle.detebutton}>
+                                <Button onPress={()=>{deleteItem(prod.id)} }  color="#ff0000" title="Delete"></Button>     
+                            </View>
+                            <View style={mystyle.updatebutton}>
+                            <Button  onPress={()=>{navigation.navigate('UPDATE_PRODUCT',{item:prod})}} color="#00ff00" title="Update"></Button>
+                            </View>
+                              
                      </View>
                      
                      )
@@ -44,14 +56,28 @@ export default function HomeComponent({navigation}){
     )
 }
 const mystyle=StyleSheet.create({
+    detebutton:{
+        backgroundColor:'red',
+        width:250 ,
+        height:35,
+        marginTop:10,
+        marginLeft:15,
+    },
+    updatebutton:{
+        backgroundColor:'red',
+        width:250 ,
+        height:35,
+        marginTop:10,
+        marginLeft:15,
+    },
     card:{
         flex:1,
         marginLeft:50,
         marginTop:10,
         marginRight:50,
         marginBottom:10,
-        width:'200',
-        height:'250',
+        width:300,
+        height:400,
         padding:'10px', 
         borderTopColor:'black',
         borderTopWidth:2,
@@ -70,8 +96,6 @@ const mystyle=StyleSheet.create({
       shadowOpacity: 0.8,
       shadowRadius: 3,
       shadowOffset: {
-      height: 1,
-      width: 1,
     }
     },
     textstyle:{
